@@ -1,1 +1,1 @@
-var tipuesearch = {"pages": [{'title': 'About', 'text': 'cmsimde_site \n', 'tags': '', 'url': 'About.html'}, {'title': 'Schedule', 'text': '', 'tags': '', 'url': 'Schedule.html'}, {'title': 'Tutorial', 'text': '', 'tags': '', 'url': 'Tutorial.html'}]};
+var tipuesearch = {"pages": [{'title': 'About', 'text': 'cmsimde_site \n', 'tags': '', 'url': 'About.html'}, {'title': 'Schedule', 'text': '', 'tags': '', 'url': 'Schedule.html'}, {'title': 'tutorial1', 'text': '', 'tags': '', 'url': 'tutorial1.html'}]};
