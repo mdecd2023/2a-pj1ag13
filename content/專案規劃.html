@@ -142,8 +142,109 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">目前進度 << <a href='目前進度.html'>Previous</a> <a href='w6.html'>Next</a> >> w6<br /><h1>專案規劃</h1>
-<p><span>開發一款能在 web-based CoppeliaSim 場景中雙方或多方 (human or computer) 對玩的遊戲 (game) 產品</span></p>
-<br />目前進度 << <a href='目前進度.html'>Previous</a> <a href='w6.html'>Next</a> >> w6</div>
+<p><span>2a-pj1ag13組員:41023133、41023140</span></p>
+<p>pj1ag4倉儲:<a href="https://github.com/mdecd2023/2a-pj1ag13.git">https://github.com/mdecd2023/2a-pj1ag13.git</a></p>
+<p>pj1ag4網頁:<a href="https://mdecd2023.github.io/2a-pj1ag13/content/index.html">https://mdecd2023.github.io/2a-pj1ag13/content/index.html</a></p>
+<p></p>
+<p>用鍵盤控制<a href="./../downloads/BubbleRob13.ttt">BubbleRob</a>:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/eCp3avFJlRc" title="YouTube video player" width="560"></iframe></p>
+<p></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()  
+    right_wheel= sim.getObjectHandle('joint1') 
+    left_wheel= sim.getObjectHandle('joint2') 
+    right_velocity=0 
+    left_velocity=0
+    speed=5
+    sim.setJointTargetVelocity(right_wheel,0)
+    sim.setJointTargetVelocity(left_wheel,0)
+ 
+end
+  
+function sysCall_actuation()  
+    message,auxiliaryData=sim.getSimulatorMessage() 
+    while message~=-1 do
+        if (message==sim.message_keypress) then
+            
+            if (auxiliaryData[1]==32) then
+
+                right_velocity=0 
+                left_velocity=0 
+                sim.setJointMaxForce(right_wheel, 0) 
+                sim.setJointMaxForce(left_wheel, 0) 
+                break
+            else
+                sim.setJointMaxForce(right_wheel, 10) 
+                sim.setJointMaxForce(left_wheel, 10)
+            
+            
+                if (auxiliaryData[1]==2007) then -- up key
+                    
+                    sim.setJointTargetVelocity(right_wheel,speed)
+                    sim.setJointTargetVelocity(left_wheel,speed)
+                end
+                if (auxiliaryData[1]==2008) then -- down key
+                    
+                    sim.setJointTargetVelocity(right_wheel,-speed/2)
+                    sim.setJointTargetVelocity(left_wheel,-speed/2)
+                    
+                end
+                if (auxiliaryData[1]==2009) then -- left key
+                    sim.setJointTargetVelocity(right_wheel,speed)
+                    sim.setJointTargetVelocity(left_wheel,speed/2)
+                   
+                end
+                if (auxiliaryData[1]==2010) then -- right key
+                    sim.setJointTargetVelocity(right_wheel,speed/2)
+                    sim.setJointTargetVelocity(left_wheel,speed)
+                    
+                end
+
+            end
+        end
+        message,auxiliaryData=sim.getSimulatorMessage()
+    end
+end</pre>
+<p></p>
+<p>football場景設置:</p>
+<p>繪製過程</p>
+<script>
+var winkVideoData1 = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData1" height="630" muted="true" width="1008">
+<source src="./../downloads/ag13.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div>
+<p><img alt="" height="496" src="./../images/football13.png" width="882"/></p>
+<p><a href="./../downloads/football scene.stl">足球場NX.stl</a></p>
+<p></p>
+<p>foodball的coppeliasim機器人對戰:</p>
+<p></p>
+<p><img alt="" height="500" src="./../images/0423_13.png" width="889"/></p>
+<p></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/z7689B4Zzpo" title="YouTube video player" width="560"></iframe></p>
+<p><a href="./../downloads/0423%2013.ttt">機器人對戰Coppeliasim.ttt</a></p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><br />目前進度 << <a href='目前進度.html'>Previous</a> <a href='w6.html'>Next</a> >> w6</div>
         
     <!-- footer -->
       <div class="container">
